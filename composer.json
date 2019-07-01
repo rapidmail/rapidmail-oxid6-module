@@ -17,7 +17,9 @@
         }
     ],
     "require": {
-        "ext-json": "*"
+        "ext-json": "*",
+        "doctrine/collections": "~v1.4",
+        "doctrine/dbal": "~v2.5"
     },
     "extra": {
         "oxideshop": {
