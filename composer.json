@@ -1,0 +1,32 @@
+{
+    "name": "rapidmail/rapidmail-oxid6-module",
+    "description": "Connect your OXID eShop with rapidmail to import customer and product information",
+    "type": "oxideshop-module",
+    "keywords": [
+        "rapidmail",
+        "email marketing",
+        "newsletter marketing"
+    ],
+    "homepage": "https://www.rapidmail.de",
+    "minimum-stability": "stable",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "rapidmail GmbH",
+            "email": "support@rapidmail.de"
+        }
+    ],
+    "require": {
+        "ext-json": "*"
+    },
+    "extra": {
+        "oxideshop": {
+            "target-directory": "rapidmail/rapidmailoxid6module"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Rapidmail\\Oxid6Module\\": "../../../source/modules/rapidmail/rapidmailoxid6module"
+        }
+    }
+}
