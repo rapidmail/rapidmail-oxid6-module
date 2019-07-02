@@ -6,7 +6,7 @@ namespace Rapidmail\Oxid6Module\Core;
  * SeoDecoder
  *
  * Compatibility layer to map v4/v5 api requests to the appropriate controllers.
- * This should be consisdered a temporary solution because it will "hijack" oxrest URLs
+ * This should be considered as a temporary solution because it will "hijack" oxrest URLs
  * but on the other hand the v4/v5 plugin did this as well ¯\_(ツ)_/¯
  *
  * @mixin \OxidEsales\Eshop\Core\SeoDecoder
