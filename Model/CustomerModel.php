@@ -47,7 +47,8 @@ class CustomerModel extends DatabaseModel implements ListModelInterface
             ->select('u.*')
             ->addSelect('IF(n.OXDBOPTIN = 1,1,0) AS newsletter')
             ->from('oxuser', 'u')
-            ->leftJoin('u', 'oxnewssubscribed', 'n', 'u.oxid = n.oxuserid');
+            ->leftJoin('u', 'oxnewssubscribed', 'n', 'u.oxid = n.oxuserid')
+            ->where($qb->expr()->eq('n.OXDBOPTIN', '1'));
 
         return parent::prepareQuery($qb, $params);
 
