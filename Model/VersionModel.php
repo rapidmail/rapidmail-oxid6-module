@@ -3,14 +3,33 @@
 namespace Rapidmail\Oxid6Module\Model;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\DBAL\Query\QueryBuilder;
+use OxidEsales\Eshop\Core\ShopVersion;
+use OxidEsales\Facts\Edition\EditionSelector;
 use Rapidmail\Oxid6Module\Helper\VersionHelper;
 
 /**
  * VersionModel
  */
-class VersionModel extends DatabaseModel implements ListModelInterface
+class VersionModel implements ListModelInterface
 {
+
+    /** @var string */
+    const OXID = '3a952ff0b7b6c57c45f8c10148134734';
+
+    /**
+     * @var EditionSelector
+     */
+    protected $editionSelector;
+
+    /**
+     * Constructor
+     *
+     * @param EditionSelector $editionSelector
+     */
+    public function __construct(EditionSelector $editionSelector)
+    {
+        $this->editionSelector = $editionSelector;
+    }
 
     /**
      * @inheritDoc
@@ -20,13 +39,15 @@ class VersionModel extends DatabaseModel implements ListModelInterface
 
         $collection = new ArrayCollection();
 
-        foreach ($this->getGenerator($params) as $item) {
-
-            $item['pluginversion'] = VersionHelper::PLUGIN_VERSION;
-
-            $collection->set($item['OXID'], array_change_key_case($item, CASE_LOWER));
-
-        }
+        $collection->set(
+            self::OXID,
+            [
+                'oxid' => self::OXID,
+                'oxversion' => ShopVersion::getVersion(),
+                'oxedition' => $this->editionSelector->getEdition(),
+                'pluginversion' => VersionHelper::PLUGIN_VERSION
+            ]
+        );
 
         return $collection;
 
@@ -35,15 +56,17 @@ class VersionModel extends DatabaseModel implements ListModelInterface
     /**
      * @inheritDoc
      */
-    protected function prepareQuery(QueryBuilder $qb, array $params = [])
+    public function getMaxPageSize()
     {
+        return 1;
+    }
 
-        $qb
-            ->select('v.OXID, v.OXVERSION, v.OXEDITION')
-            ->from('oxshops', 'v');
-
-        return parent::prepareQuery($qb, $params);
-
+    /**
+     * @inheritDoc
+     */
+    public function getItemCount()
+    {
+        return 1;
     }
 
 }

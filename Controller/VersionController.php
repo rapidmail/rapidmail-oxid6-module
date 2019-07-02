@@ -3,7 +3,7 @@
 namespace Rapidmail\Oxid6Module\Controller;
 
 use OxidEsales\Eshop\Core\Request;
-use Rapidmail\Oxid6Module\Helper\DatabaseHelper;
+use OxidEsales\Facts\Edition\EditionSelector;
 use Rapidmail\Oxid6Module\Model\VersionModel;
 use Rapidmail\Oxid6Module\Response\ListResponse;
 
@@ -26,8 +26,7 @@ class VersionController extends BaseController
             /** @var VersionModel $versionModel */
             $versionModel = oxNew(
                 VersionModel::class,
-                DatabaseHelper::getDatabaseAdapter(),
-                DatabaseHelper::getQueryBuilderFactory()
+                new EditionSelector()
             );
 
             return oxNew(
