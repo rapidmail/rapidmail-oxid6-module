@@ -28,5 +28,8 @@ $aModule = [
     ],
     'extend' => [
         \OxidEsales\Eshop\Core\SeoDecoder::class => \Rapidmail\Oxid6Module\Core\SeoDecoder::class
+    ],
+    'events' => [
+        'onActivate' => '\Rapidmail\Oxid6Module\Helper\ActivationHelper::onActivate'
     ]
 ];

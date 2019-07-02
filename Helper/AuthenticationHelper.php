@@ -20,8 +20,8 @@ class AuthenticationHelper
      * @var string[]
      */
     private $_aAuthGroups = [
-        'oxidadmin',
-        'oxjsonro' // Oxid json read only group, use old name for compatibility
+        'oxjsonro', // Oxid json read only group, use old name for compatibility
+        'rmoxconnect'
     ];
 
     /**
