@@ -4,8 +4,7 @@
 ## Requirements
 
 * OXID eShop 6.0 or 6.1 (tested with CE)
-* SEO URLs must be enabled and working
-* Composer package manager
+* SEO URLs must be enabled and working (default)
 
 ## Installation 
 

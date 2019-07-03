@@ -13,7 +13,7 @@ $aModule = [
     'version' => \Rapidmail\Oxid6Module\Helper\VersionHelper::PLUGIN_VERSION,
     'title' => 'Rapidmail OXID eShop connector',
     'description' => [
-        'de' => 'Automatische Synchronisierung von Newsletter-Abonnenten und Kundendaten in rapidmail',
+        'de' => 'Automatische Synchronisierung von Newsletter-Abonnenten inklusive Kundendaten in rapidmail',
         'en' => 'Automatic synchronization of newsletter subscribers and customer data in rapidmail'
     ],
     'thumbnail' => 'logo.png',
