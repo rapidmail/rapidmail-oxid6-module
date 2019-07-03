@@ -29,7 +29,7 @@ RewriteRule ^(.*) - [E=HTTP_AUTHORIZATION:%1]
 
 * Navigate to your admin panel and activate the Rapidmail OXID eShop connector module from the module list
 
-* Use an active or create a new user. Map it to a the user group "Rapidmail OXID eShop connector" that has been 
+* Use an active or create a new user. Map it to the user group "Rapidmail OXID eShop connector" that has been 
 created during module activation
 
 ## Usage
