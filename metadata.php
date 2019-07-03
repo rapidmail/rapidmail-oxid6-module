@@ -18,7 +18,7 @@ $aModule = [
     ],
     'thumbnail' => 'logo.png',
     'author' => 'rapidmail GmbH',
-    'lang' => 'en',
+    'lang' => 'de',
     'url' => 'https://www.rapidmail.de',
     'email' => 'support@rapidmail.de',
     'controllers' => [
