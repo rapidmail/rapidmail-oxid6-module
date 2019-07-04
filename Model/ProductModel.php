@@ -24,6 +24,12 @@ class ProductModel extends DatabaseModel implements ListModelInterface
             /** @var Article $article */
             $article = oxNew(Article::class);
             $article->assign($item);
+            $price = $article->getPrice();
+            $tPrice = $article->getTPrice();
+
+            if (empty($tPrice) || $tPrice->getPrice() <= $price->getPrice()) {
+                $tPrice = $price;
+            }
 
             $result = array_merge(
                 array_change_key_case($item, CASE_LOWER),
@@ -32,8 +38,8 @@ class ProductModel extends DatabaseModel implements ListModelInterface
                     'deeplink' => $article->getBaseSeoLink(0, true),
                     'image' => $article->getMasterZoomPictureUrl(1),
                     'oxlongdesc' => $article->getLongDesc(),
-                    'originalprice' => $item['OXPRICE'],
-                    'oxprice' => $article->getPrice()->getPrice()
+                    'originalprice' => $tPrice->getPrice(),
+                    'oxprice' => $price->getPrice()
                 ]
             );
 
