@@ -4,7 +4,7 @@ namespace Rapidmail\Oxid6Module\Model;
 
 use Doctrine\DBAL\Query\QueryBuilder;
 use OxidEsales\Eshop\Core\Database\Adapter\DatabaseInterface;
-use OxidEsales\EshopCommunity\Internal\Common\Database\QueryBuilderFactoryInterface;
+use OxidEsales\EshopCommunity\Internal\Framework\Database\QueryBuilderFactoryInterface;
 
 /**
  * DatabaseModel
