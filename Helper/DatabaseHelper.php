@@ -4,7 +4,8 @@ namespace Rapidmail\Oxid6Module\Helper;
 
 use OxidEsales\Eshop\Core\Database\Adapter\Doctrine\Database;
 use OxidEsales\Eshop\Core\DatabaseProvider;
-use OxidEsales\EshopCommunity\Internal\Common\Database\QueryBuilderFactory;
+use OxidEsales\EshopCommunity\Internal\Framework\Database\QueryBuilderFactory;
+
 
 /**
  * DatabaseHelper
